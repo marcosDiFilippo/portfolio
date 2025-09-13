@@ -144,7 +144,6 @@ nav > ul {
 }
 
 #theme-checkbox:checked + label div {
-  /* left: calc(2.5em - .8em - .1em); */
     left: 1.6em;
     background-color: #212121;
 }
@@ -276,6 +275,60 @@ h4 {
     font-size: 2rem;
 }
 
+.article-box-radio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-radio {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.box-radio div {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    border-bottom: #1d2835 2px solid;
+    width: 100%;
+    position: relative;
+}
+
+.labels-radio {
+    font-size: 1.3rem;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.labels-radio:hover {
+    color: #0077ff;
+}
+
+.slide {
+    position: absolute;
+    width: 33.3%;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: #0077ff;
+    transition: all 0.25s ease;
+}
+
+.inputs-radio {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    height: 100%;
+    cursor: pointer;
+    z-index: 2;
+}
+
 .projects-flex {
     display: flex;
     gap: 5rem;
@@ -289,7 +342,6 @@ h4 {
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     overflow: hidden;
-    display: flex;
     flex-direction: column;
     transition: transform 0.3s ease;
     width: 40%;

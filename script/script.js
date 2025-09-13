@@ -9,7 +9,7 @@ const button = document.getElementById("theme-checkbox");
 
 const body = document.querySelector("body");
 const section = document.querySelectorAll("section");
-const cards = document.querySelectorAll(".card");
+const cardsColor = document.querySelectorAll(".card");
 const p = document.querySelectorAll("p");
 const h1 = document.querySelector("h1");
 const h2 = document.querySelector("h2");
@@ -22,8 +22,8 @@ const navLink = document.querySelectorAll(".navLink");
 button.addEventListener("click", () => {
     body.classList.toggle("light");
     header.classList.toggle("light");
-    cards.forEach(cards => {
-        cards.classList.toggle("light");
+    cardsColor.forEach(cardsColor => {
+        cardsColor.classList.toggle("light");
     })
     p.forEach(p => {
         p.classList.toggle("light");
@@ -43,6 +43,43 @@ button.addEventListener("click", () => {
         languages.classList.toggle("light");
     })
 });
+
+const slide = document.querySelector(".slide");
+const inputsRadio = document.querySelectorAll(".inputs-radio");
+const labelsRadio = document.querySelectorAll(".labels-radio");
+
+const fullstack = document.querySelector("#projects-fullstack");
+const backend = document.querySelector("#projects-backend");
+const frontend = document.querySelector("#projects-frontend");
+const arrayStacks = [fullstack, backend, frontend];
+
+for (let i = 1; i < arrayStacks.length; i++) {
+    arrayStacks[0].style.display = "flex";
+    arrayStacks[i].style.display = "none";
+}
+
+inputsRadio.forEach(inputsRadio => {
+    inputsRadio.addEventListener("click", () => {
+        arrayStacks.forEach(arrayStacks => {
+            arrayStacks.style.display = "none";
+        })
+        
+        const value = inputsRadio.value;
+        
+        if (value == "fullstack") {
+            fullstack.style.display = "flex";
+            slide.style.transform = "translateX(0)";
+        }
+        else if (value == "backend") {
+            backend.style.display = "flex";
+            slide.style.transform = "translateX(100%)";
+        }
+        else if (value == "frontend") {
+            frontend.style.display = "flex";
+            slide.style.transform = "translateX(200%)";
+        }
+    });
+})
 
 const texts = ["Developer", "Frontend", "Backend", "Estudiante"];
 let count = 0;
