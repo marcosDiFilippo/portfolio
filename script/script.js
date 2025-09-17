@@ -1,3 +1,18 @@
+const openClosed = document.querySelector("#burger");
+const nav = document.querySelector("nav");
+const navLink = document.querySelectorAll(".navLink");
+
+openClosed.addEventListener("change", () => {
+    nav.classList.toggle("openClosed");
+});
+
+navLink.forEach(link => {
+    link.addEventListener("click", () => {
+        nav.classList.remove("openClosed");
+        openClosed.checked = false;
+    });
+});
+
 const liPanel = document.querySelector(".liPanel");
 const panel = document.querySelector(".panelSettings");
 
@@ -10,14 +25,12 @@ const button = document.getElementById("theme-checkbox");
 const body = document.querySelector("body");
 const section = document.querySelectorAll("section");
 const cardsColor = document.querySelectorAll(".card");
-const p = document.querySelectorAll("p");
-const h1 = document.querySelector("h1");
-const h2 = document.querySelector("h2");
-const h3 = document.querySelectorAll("h3");
-const h4 = document.querySelectorAll("h4");
+const p = document.querySelectorAll(".card p");
+const titles = document.querySelectorAll("h1, h3, h4"); 
 const languages = document.querySelectorAll(".languages");
 const header =  document.querySelector("header");
-const navLink = document.querySelectorAll(".navLink");
+const labelsRadio = document.querySelectorAll(".labels-radio");
+const slide = document.querySelector(".slide");
 
 button.addEventListener("click", () => {
     body.classList.toggle("light");
@@ -28,38 +41,37 @@ button.addEventListener("click", () => {
     p.forEach(p => {
         p.classList.toggle("light");
     })
-    h1.classList.toggle("light");
-    h2.classList.toggle("light");
-    h3.forEach(h3 => {
-        h3.classList.toggle("light");
-    })
-    h4.forEach(h4 => {
-        h4.classList.toggle("light");
+    slide.classList.toggle("light");
+    titles.forEach(titles => {
+        titles.classList.toggle("light");
     })
     navLink.forEach(navLink => {
         navLink.classList.toggle("light");
+    })
+    labelsRadio.forEach(labelsRadio => {
+        labelsRadio.classList.toggle("light");
     })
     languages.forEach(languages => {
         languages.classList.toggle("light");
     })
 });
 
-const slide = document.querySelector(".slide");
 const inputsRadio = document.querySelectorAll(".inputs-radio");
-const labelsRadio = document.querySelectorAll(".labels-radio");
 
 const fullstack = document.querySelector("#projects-fullstack");
 const backend = document.querySelector("#projects-backend");
 const frontend = document.querySelector("#projects-frontend");
 const arrayStacks = [fullstack, backend, frontend];
 
+arrayStacks[0].style.display = "flex";
+
 for (let i = 1; i < arrayStacks.length; i++) {
-    arrayStacks[0].style.display = "flex";
     arrayStacks[i].style.display = "none";
 }
 
 inputsRadio.forEach(inputsRadio => {
     inputsRadio.addEventListener("click", () => {
+
         arrayStacks.forEach(arrayStacks => {
             arrayStacks.style.display = "none";
         })
@@ -81,7 +93,7 @@ inputsRadio.forEach(inputsRadio => {
     });
 })
 
-const texts = ["Developer", "Frontend", "Backend", "Estudiante"];
+const texts = ["Developer", "Frontend", "Backend"];
 let count = 0;
 let index = 0;
 let currentText = "";

@@ -5,15 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portfolio</title>
     <link rel="stylesheet" href="./css/style.css">
-    
 </head>
 <body>
     <header>
         <div class="container">
-            <a href="">
-                <h1 class="logo">Marcos Di Filippo</h1>
+            <a href="#inicio">
+                <h1 class="logo">
+                    <span class="nameH1">
+                        Marcos
+                    </span>
+                    <span class="lastNameH1">
+                        Di Filippo
+                    </span>
+                </h1>
             </a>
-            <nav>
+            <nav class="noOpenClosed">
                 <ul>
                     <li>
                         <a class="navLink" href="#inicio">
@@ -96,6 +102,14 @@
                     </li>
                 </ul>
             </nav>
+            <div class="open-closed"> 
+                <label class="burger" for="burger">
+                <input type="checkbox" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+                </label>
+            </div>
         </div>
     </header>
     <section id="inicio" class="hero">
@@ -122,6 +136,7 @@
                 </div>
             </div>
         </article>
+        <div class="background-opacity"></div>
     </section>
     <section id="proyectos" class="projects">
         <article class="article-box-radio">
@@ -144,7 +159,9 @@
         </article>
         <article class="projects-flex">
             <div class="card" id="projects-fullstack">
-                <img class="img-projects" src="./imagenes/img-black-clover.webp" alt="">
+                <div class="div-img-projects">
+                    <img class="img-projects" src="./imagenes/img-black-clover.webp" alt="">
+                </div>
                 <div class="first-box-card">
                     <div>
                         <h4>Black Clover - La Espada Del Rey Mago</h4>
