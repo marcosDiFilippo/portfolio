@@ -551,10 +551,36 @@ h4 {
     text-align: center;
 }
 
+.about p {
+    text-align: left;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .about h3, .contact h3 {
     margin-bottom: 1rem;
     font-size: 2rem;
     color: #fff;
+}
+
+.div-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2rem;
+}
+
+.imagen-contacto {
+    width: 300px; 
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #333;
 }
 
 /* footer */
@@ -583,6 +609,10 @@ p.light {
     color: #212121;
 }
 
+.p-sections.light {
+    color: #212121;
+}
+
 .navLink.light {
     color: #212121;
 }
@@ -601,6 +631,120 @@ h1.light > *, h3.light, h4.light {
 
 .languages.light {
     color: #0d1117;
+}
+
+footer.light {
+    background-color: #c9d1d9;
+}
+
+footer p.light {
+    color: #212121;
+}
+
+.div-links {
+    width: fit-content;
+    height: fit-content;
+    background-color: rgba(49, 49, 49, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    column-gap: 1.5rem;
+    overflow: hidden;
+    border-radius: 27px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+    margin-top: 1rem;
+}
+
+.div-links a {
+    width: 52px;
+    height: 52px;
+    background-color: rgba(117, 117, 117, 0);
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.15, 0.83, 0.66, 1);
+    cursor: pointer;
+}
+
+.div-links a:hover {
+    transform: scale(1.2);
+    border-radius: 15px;
+}
+
+.div-links a:nth-child(1):hover {
+    background-color: #d62976;
+}
+
+.div-links a:nth-child(2):hover {
+    background-color: #960f0f;
+}
+
+.div-links a:nth-child(3):hover {
+    background-color: #0072b1;
+}
+
+.div-links a:nth-child(4):hover {
+    background-color: #25d366;
+}
+
+.div-links a:active {
+    transform: scale(1.1);
+    transition-duration: 0.3s;
+}
+
+.svgEmail {
+    width: 50px;
+    height: 50px;
+}
+
+.svgEmail path {
+    fill: black;
+    stroke: black;
+    transition: fill 0.3s ease;
+}
+
+.div-links a:nth-child(2):hover .svgEmail path {
+    fill: white;
+    stroke: #960f0f;
+}
+
+.div-links a svg:first-child {
+    display: flex;
+    scale: 1.3;
+    position: absolute;
+    width: 17px;
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 0.4s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.div-links a svg:first-child path {
+    fill: rgb(255, 255, 255);
+}
+
+.div-links a:hover svg:first-child {
+    transform: translateY(-40px);
+    opacity: 0;
+}
+
+.div-links a svg:last-child {
+    display: flex;
+    position: absolute;
+    width: 17px;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+.div-links a svg:last-child path {
+    fill: rgb(255, 255, 255);
+}
+
+.div-links a:hover svg:last-child {
+    opacity: 1;
+    transform: translateY(0px);
 }
 
 @media (max-width: 1535px) {
@@ -665,7 +809,7 @@ h1.light > *, h3.light, h4.light {
         flex-direction: column;
         justify-content: space-between;
         row-gap: 5rem;
-        margin-top: -120px;
+        margin-top: -200px;
     }
 
     .navLink {
@@ -693,3 +837,14 @@ h1.light > *, h3.light, h4.light {
         width: 100%;
     }
 }   
+
+@media (width <= 718px) {
+    .div-contact p {
+        text-align: center;
+    }
+
+    .div-contact {
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+}
