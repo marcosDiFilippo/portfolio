@@ -538,6 +538,11 @@ h4 {
     flex-wrap: wrap;
 }
 
+.box-languages svg {
+    width: 50px;
+    height: 50px;
+}
+
 .languages {
     width: 60px;
 }
@@ -797,7 +802,7 @@ footer p.light {
         position: absolute;
         top: 0;
         right: -1000px;
-        background-color: #2b2b2b;
+        background-color: #161b22;
         transition: right 0.3s ease;
         display: flex;
         justify-content: center;
